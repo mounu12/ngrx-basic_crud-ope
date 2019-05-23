@@ -1,0 +1,41 @@
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+mat-icon {
+    cursor: pointer;
+}
+
+.header-search {
+    float: left;
+    margin-right: 30px;
+    width: 200px;
+    .mat-input-element {
+        color: #fff;
+        .mat-form-field-appearance-legacy .mat-form-field-label {
+            color: rgba(255, 255, 255, 0.54);
+        }
+    }
+}
+
+.mat-table {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: none;
+    tr:nth-child(even) {
+        background-color: #fdfdfd;
+    }
+}
+
+tr.mat-header-row {
+    height: 48px;
+    background-color: #f3f3f3;
+}
+
+.mb20 {
+    margin-bottom: 20px
+}

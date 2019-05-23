@@ -1,0 +1,11 @@
+<div class="header accent p-24 h-160 page-title-info p-24 flex">
+  <div class="float-left h2 mt-16 mar-0"><i class="far fa-address-card"></i> Employee List </div>
+  <div class="float-right">
+          <mat-form-field class="header-search">
+                  <input (keyup)="applyFilter($event.target.value)" matInput placeholder="Search">
+              </mat-form-field>
+      
+      <button button="submit" class="header-button" mat-raised-button routerLink="create-employee"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+           Add Employee</button>
+  </div>
+</div>

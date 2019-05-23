@@ -1,0 +1,83 @@
+.card-employee {
+    width: 33%;
+    margin-bottom: 2%;
+    margin-left: 3%;
+    right: -20px;
+}
+
+.mat-card-content {
+    margin-bottom: 2%;
+}
+
+.mat-elevation-z4 {
+    box-shadow: none;
+}
+
+#personalDetailsDiv p {
+    float: left;
+    width: 100%;
+    clear: both;
+    margin: 0 0 6px 0;
+    padding-bottom: 7px;
+}
+
+#personalDetailsDiv b {
+    float: left;
+    min-width: 140px;
+    margin: 0 0 0px 10px;
+    text-align: left;
+    line-height: 24px;
+    font-weight: normal;
+    font-size: 14px;
+    font-family: 'Roboto Regular', sans-serif;
+    text-shadow: 0 1px 0 #FFFFFF;
+    color: #000000;
+    width: 10%;
+}
+
+#personalDetailsDiv b i {
+    float: right;
+    font-style: normal;
+}
+
+#personalDetailsDiv span {
+    float: left;
+    margin: 0 0 0px 15px;
+    text-align: left;
+    color: #3b3b3b;
+    line-height: 24px;
+    font-size: 14px;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.emp-name-span {
+    font-weight: normal;
+    text-transform: capitalize;
+    width: 27%;
+    word-wrap: break-word;
+}
+
+.all-bg-ctrl {
+    float: left;
+    width: 100%;
+    // padding: 2%;
+    //border: 1px solid #cfcfcf;
+    // background-color: #ffffff;
+    // margin: 0px 0 20px 0;
+    position: relative;
+}
+
+.view-profile-img {
+    margin: 0 30px;
+    flex: 1;
+    img {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        margin: 0;
+    }
+}
+
+#personalDetailsDiv {
+    flex: 8;
+}

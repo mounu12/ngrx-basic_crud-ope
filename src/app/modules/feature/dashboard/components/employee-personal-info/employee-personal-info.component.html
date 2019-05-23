@@ -1,0 +1,86 @@
+<div class="all-bg-ctrl">
+    <mat-tab-group dynamicHeight>
+        <mat-tab label="Personal Info">
+            <div class="example-small-box mat-elevation-z4">
+                <div id="personalDetailsDiv">
+                    <p><b>Employee Name <i>:</i></b>
+                        <span class="emp-name-span bold-text">{{employeeInfo.prefix}}&nbsp;{{employeeInfo.firstName}}</span>
+                    </p>
+                    <p><b>Email Id <i>:</i></b><span>
+                    <a href="javascript:void(0)">{{employeeInfo.email}}</a></span>
+                    </p>
+                    <p><b>Contact No <i>:</i></b>
+                        <span class="emp-name-span" id="spanempid">{{employeeInfo.mobileNumber}}</span>
+                    </p>
+                    <p><b>Role <i>:</i></b>
+                        <span class="emp-name-span" id="spanempid">{{employeeInfo.employeeRole}}</span>
+                    </p>
+                    <p><b>Employee Id <i>:</i></b>
+                        <span class="emp-name-span" id="spanempid">{{employeeInfo.employeeId}}</span>
+                    </p>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Official Info">
+            <div id="personalDetailsDiv">
+                <p><b>Employee Type <i>:</i></b>
+                    <span class="emp-name-span bold-text">{{employeeInfo.employeeType}}</span>
+                </p>
+                <p><b>Date Of Joining<i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.dateOfJoining}}</span>
+                </p>
+                <p><b>Role <i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.employeeRole}}</span>
+                </p>
+                <p><b>Department <i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.department}}</span>
+                </p>
+                <p><b>Reporting Manager <i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.reportingManager}}</span>
+                </p>
+            </div>
+        </mat-tab>
+        <mat-tab label="Contact Info">
+            <div id="personalDetailsDiv">
+                <p><b>Address <i>:</i></b>
+                    <span class="emp-name-span bold-text">{{employeeInfo.addressLine}}</span>
+                </p>
+                <p><b>Street <i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.street}}</span>
+                </p>
+                <p><b>PinCode <i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.pincode}}</span>
+                </p>
+                <p><b>City <i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.city}}</span>
+                </p>
+                <p><b>State <i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.state}}</span>
+                </p>
+            </div>
+        </mat-tab>
+        <mat-tab label="Bank Account Info">
+            <div id="personalDetailsDiv">
+                <p><b>BankName <i>:</i></b>
+                    <span class="emp-name-span bold-text">{{employeeInfo.bankName}}</span>
+                </p>
+                <p><b>Account Number <i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.accountNumber}}</span>
+                </p>
+                <p><b>Branch <i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.branch}}</span>
+                </p>
+                <p><b>IFSC Code <i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.ifsccode}}</span>
+                </p>
+                <p><b>PAN <i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.panNumber}}</span>
+                </p>
+                <p><b>Aadhaar <i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.aadharNumber}}</span>
+                </p>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+<div class="clearfix"></div>

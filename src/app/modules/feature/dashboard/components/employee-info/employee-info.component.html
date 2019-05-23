@@ -1,0 +1,27 @@
+<div fxLayout="column" fxLayout.xs="column" fxLayoutGap="30px" fxLayoutAlign="center none">
+    <span flex></span>
+    <div class=" all-bg-ctrl">
+        <mat-card-content fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutGap="30px" fxLayoutAlign="space between">
+            <div class="view-profile-img">
+                <img mat-card-image [src]="img">
+            </div>
+            <div id="personalDetailsDiv">
+                <p><b>Employee Name <i>:</i></b>
+                    <span class="emp-name-span bold-text">{{employeeInfo.prefix}}&nbsp;{{employeeInfo.firstName}}</span>
+                </p>
+                <p><b>Email Id <i>:</i></b><span>
+                <a href="javascript:void(0)">{{employeeInfo.email}}</a></span>
+                </p>
+                <p><b>Contact No <i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.mobileNumber}}</span>
+                </p>
+                <p><b>Role <i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.employeeRole}}</span>
+                </p>
+                <p><b>Employee Id <i>:</i></b>
+                    <span class="emp-name-span" id="spanempid">{{employeeInfo.employeeId}}</span>
+                </p>
+            </div>
+        </mat-card-content>
+    </div>
+</div>

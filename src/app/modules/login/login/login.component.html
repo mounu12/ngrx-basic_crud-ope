@@ -1,0 +1,43 @@
+<div class="container-full">
+    <div id="wrapper">
+        <div class="content-wrapper">
+            <div class="content">
+                <div id="login" class="row no-gutters">
+                    <div class="intro col-12 col-md light-fg">
+                        <div class="d-flex flex-column align-items-center align-items-md-start text-center text-md-left py-16 py-md-32 px-12">
+                            <div class="title">
+                                Welcome to HRMS
+                            </div>
+                            <div class="description pt-2">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper nisl erat, vel convallis elit fermentum pellentesque. Sed mollis velit facilisis facilisis viverra.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-wrapper col-12 col-md-auto d-flex justify-content-center p-4 p-md-0">
+                        <div class="form-content md-elevation-8 h-100 text-auto">
+                            <div class=" py-16 py-md-32 px-12">
+                                <mat-card-title>Login</mat-card-title>
+
+                                <form class="example-form mt-8" #LoginForm="ngForm">
+                                    <mat-form-field class="form-group mb-4">
+                                        <input matInput placeholder="Username" name="email" [(ngModel)]="user.email" #email="ngModel" required autofocus>
+                                    </mat-form-field>
+                                    <mat-form-field class="form-group mb-4">
+                                        <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required>
+                                    </mat-form-field>
+                                    <mat-form-field class="form-group mb-4">
+                                        <input matInput placeholder="Tenant Name" name="X-Tenant" [(ngModel)]="tenantName.Tenantname" #Tenantname="ngModel" required>
+                                    </mat-form-field>
+                                </form>
+                                <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+
+                                <button class="login-btn" [disabled]="!LoginForm.form.valid" mat-raised-button (click)="signIn()" color="primary">LOGIN</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

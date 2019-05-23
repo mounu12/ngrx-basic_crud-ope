@@ -1,0 +1,113 @@
+.profile-userpic {
+    img {
+        float: none;
+        margin: 0 auto;
+        width: 50%;
+        height: 70%;
+        -webkit-border-radius: 20% !important;
+        -moz-border-radius: 20% !important;
+        border-radius: 20% !important;
+    }
+}
+
+.profile-usertitle-name {
+    color: #5a7391;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+    // text-transform: uppercase;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+.profile-usertitle-email {
+    // text-transform: uppercase;
+    color: rgba(255, 255, 255, .5);
+    font-size: 13px;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+.profile-userbuttons {
+    text-align: center;
+    margin-top: 10px;
+    // border-bottom: 1px solid gray;
+}
+
+.profile-userbuttons .btn {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 15px;
+    margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+    margin-right: 0px;
+}
+
+mat-sidenav {
+    min-width: 250px !important;
+    width: 250px !important;
+    max-width: 250px !important;
+    // background: #1e2129;
+    background: #2d323e;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .35);
+}
+
+.profile-usertitle {
+    text-align: center;
+    background: #1e2129;
+    position: relative;
+    height: 160px;
+    min-height: 160px;
+    max-height: 160px;
+    padding: 34px 0 14px;
+    .mat-card-img {
+        border: 5px solid #2d323e;
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        background: #fff;
+        overflow: hidden;
+        padding: 10px 0 0 0;
+        margin: 30px auto 0 auto;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.accordion-set {
+    padding-top: 50px;
+}
+
+.mat-expansion-panel-header {
+    border-top: 1px solid #3c4352;
+    // height: 48px!important;
+}
+
+.mat-expansion-panel-spacing {
+    margin: 0;
+}
+
+.mat-list-base .mat-list-item,
+.mat-list-base .mat-list-option {
+    height: 38px;
+    font-size: 14px;
+}
+
+.side-nav-bgcolor {
+    .mat-expansion-panel-content {
+        background-color: #333846!important;
+    }
+    .mat-expansion-panel-header-title {
+        padding: 10px 0px!important;
+        font-size: 15px;
+    }
+}

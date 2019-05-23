@@ -1,0 +1,258 @@
+<div class="body-container">
+    <div class="container-box">
+        <div id="regContainer" layout="column">
+            <form [formGroup]="CreateEmployeeForm" (keydown.enter)="$event.preventDefault()">
+                <div class="form-section ">
+                    <h5>Personal Info</h5>
+                    <span flex></span>
+                    <div class="createEmployeeForm" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="30px">
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <mat-select formControlName="prefix" placeholder="Prefix" name="prefix" id="prefix">
+                                <mat-option *ngFor="let prefixtype of Prefix" [value]="prefixtype">
+                                    {{prefixtype}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput required mat-maxlength="35" placeholder="First Name" type="text" formControlName="firstName"
+                             name="firstName" pattern="^[a-zA-Z0-9- ]{1,30}$" maxlength="40"/>
+                            <div *ngIf="f.firstName.errors && (f.firstName.dirty || f.firstName.touched)" class="error-meg">
+                                <div [hidden]="!f.firstName.errors.required">firstName is required.</div>
+                                <div [hidden]="!f.firstName.errors.pattern">Max.Length is 30</div>
+                            </div>
+                        </mat-form-field>
+           
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput mat-maxlength="35" placeholder="Middle Name" type="text" formControlName="middleName" name="middleName">
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput required mat-maxlength="35" placeholder="Last Name" type="text" formControlName="lastName" name="lastName"
+                            pattern="^[a-zA-Z0-9- ]{1,30}$" maxlength="40">
+                            <div *ngIf="f.lastName.errors && (f.lastName.dirty || f.lastName.touched)" class="error-meg">
+                                    <div [hidden]="!f.lastName.errors.required">Last Name is required.</div>
+                                    <div [hidden]="!f.lastName.errors.pattern">Max.Length is 30</div>
+                                </div>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            
+                            <input matInput required placeholder="DOB" [matDatepicker]="picker2" [min]="minDate" formControlName="dateOfBirth" name="dateOfBirth">
+                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2></mat-datepicker>
+                            <div *ngIf="f.dateOfBirth.errors && (f.dateOfBirth.dirty || f.dateOfBirth.touched)" class="error-meg">
+                                    <div [hidden]="f.dateOfBirth.errors.touched">DOB is required.</div>
+                                </div>
+                        </mat-form-field>
+                    </div>
+
+                    <h5>Official Info</h5>
+                    <span flex></span>
+                    <div class="createEmployeeForm" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="30px">
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <mat-select placeholder="Employee Type" name="employeeType" id="employeeType" formControlName="employeeType" required>
+                                <mat-option *ngFor="let emptype of employeeListType" [value]="emptype">{{emptype}}</mat-option>
+                            </mat-select>
+                            <div *ngIf="f.employeeType.errors && (f.employeeType.dirty || f.employeeType.touched)" class="error-meg">
+                                    <div [hidden]="f.employeeType.errors.touched">EmployeeType is required.</div>
+                                </div>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-icon-float mat-block">
+                            
+                            <input matInput required [matDatepicker]="picker1" placeholder="DOJ" [min]="minDate" formControlName="dateOfJoining" name="dateOfJoining">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                            <div *ngIf="f.dateOfJoining.errors && (f.dateOfJoining.dirty || f.dateOfJoining.touched)" class="error-meg">
+                                    <div [hidden]="f.dateOfJoining.errors.touched">DOJ is required.</div>
+                                </div>
+                        </mat-form-field>
+                        <mat-form-field>                          
+                            <input matInput placeholder="End Date" [matDatepicker]="picker" [min]="minDate" [max]="maxDate" formControlName="dateOfRelieving" name="endDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput required mat-maxlength="35" placeholder="Role" type="text" name="employeeRole" formControlName="employeeRole">
+                                <div *ngIf="f.employeeRole.errors && (f.employeeRole.dirty || f.employeeRole.touched)" class="error-meg">
+                                        <div [hidden]="f.employeeRole.errors.touched">Employee Role is required.</div>
+                                    </div>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput required mat-maxlength="35" placeholder="Department" type="text" name="department" 
+                            formControlName="department" pattern="^[a-zA-Z0-9- ]{1,10}$">
+                                <div *ngIf="f.department.errors && (f.department.dirty || f.department.touched)" class="error-meg" class="error-meg">
+                                        <div [hidden]="!f.department.errors.required">Department is required.</div>
+                                        <div [hidden]="!f.department.errors.pattern">Max.Length is 10</div>
+                                    </div>
+                        </mat-form-field>
+                        <mat-form-field class="mat-icon-float mat-block">
+                            
+                            <mat-select placeholder="Reporting Manager" name="reportingManager" id="reportingManager" formControlName="reportingManager" required>
+                                <mat-option *ngFor="let manager of managersList" [value]="manager">{{manager}}</mat-option>
+                            </mat-select>
+                                <div *ngIf="f.reportingManager.errors && (f.reportingManager.dirty || f.reportingManager.touched)" class="error-meg">
+                                        <div [hidden]="f.reportingManager.errors.touched">Reporting manager required.</div>
+                                    </div>
+                        </mat-form-field>
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput required email placeholder="Email Id" type="text" name="email" formControlName="email">
+                                <div *ngIf="f.email.errors && (f.email.dirty || f.email.touched)" class="error-meg">
+                                        <div [hidden]="!f.email.errors.required">Email ID is required.</div>
+                                        <div [hidden]="!f.email.errors.email">Enter correct format</div>
+                                    </div>
+                        </mat-form-field>
+                    </div>
+
+                    <h5>Contact Info</h5>
+                    <span flex></span>
+                    <div class="createEmployeeForm" name="regForm" role="form" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="30px">
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput required mat-maxlength="35" placeholder="Address Line1" type="text" name="addressLine" formControlName="addressLine"
+                            pattern="^[a-zA-Z0-9- /]{1,50}$">
+                                <div *ngIf="f.addressLine.errors && (f.addressLine.dirty || f.addressLine.touched)" class="error-meg">
+                                        <div [hidden]="!f.addressLine.errors.required">Address field is required.</div>
+                                        <div [hidden]="!f.addressLine.errors.pattern">Max.Length is 50</div>
+                                    </div>
+                        </mat-form-field>
+                        <mat-form-field class="mat-icon-float mat-block">   
+                            <input matInput required mat-maxlength="35" placeholder="Street Address" type="text" name="street" formControlName="street"
+                            pattern="^[a-zA-Z0-9- ]{1,20}$" maxlength="25">
+                            <div *ngIf="f.street.errors && (f.street.dirty || f.street.touched)" class="error-meg">
+                                    <div [hidden]="!f.street.errors.required">Street field is required.</div>
+                                    <div [hidden]="!f.street.errors.pattern">Max.Length is 20</div>
+                                </div>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput required mat-maxlength="35" placeholder="Pin Code" type="number" name="pincode" 
+                            pattern="^[a-zA-Z0-9-]{6}$" formControlName="pincode">
+                                <div *ngIf="f.pincode.errors && (f.pincode.dirty || f.pincode.touched)" class="error-meg">
+                                        <div [hidden]="!f.pincode.errors.pattern">PIN must be 6 digits </div>
+                                        <div [hidden]="!f.pincode.errors.required">PIN is required</div>
+                                    </div>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput required mat-maxlength="35" placeholder="City" type="text" name="city" formControlName="city"
+                            pattern="^[a-zA-Z0-9-]{1,20}$" maxlength="25">
+                            <div *ngIf="f.city.errors && (f.city.dirty || f.city.touched)" class="error-meg">
+                                    <div [hidden]="!f.city.errors.required">City is required.</div>
+                                    <div [hidden]="!f.city.errors.pattern">Max.Length is 20</div>
+                                </div>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput required mat-maxlength="35" placeholder="State" type="text" name="state" formControlName="state"
+                            pattern="^[a-zA-Z0-9-]{1,20}$" maxlength="25">
+                               <div *ngIf="f.state.errors && (f.state.dirty || f.state.touched)" class="error-meg">
+                                    <div [hidden]="!f.state.errors.required">State is required.</div>
+                                    <div [hidden]="!f.state.errors.pattern">Max.Length is 20</div>
+                                </div>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput required mat-maxlength="35" placeholder="Mobile" type="number" name="mobileNumber" 
+                            pattern="^[a-zA-Z0-9-]{10}$" formControlName="mobileNumber">
+                            <!-- <div *ngIf="mobileNumber.errors && (mobileNumber.dirty || mobileNumber.touched )" class="error-meg">
+                                    <div [hidden]="!mobileNumber.errors.pattern">Mobile Number must be 10 digits </div>
+                                    <div [hidden]="!mobileNumber.errors.required">Mobile Number is required</div>
+                                </div> -->
+                                <div *ngIf="f.mobileNumber.errors && (f.mobileNumber.dirty || f.mobileNumber.touched)" class="error-meg">
+                                        <div [hidden]="!f.mobileNumber.errors.pattern">Mobile Number must be 10 digits </div>
+                                        <div [hidden]="!f.mobileNumber.errors.required">Mobile Number is required</div>
+                                    </div>
+                        </mat-form-field>
+                    </div>
+
+                    <h5>Bank Account Info</h5>
+                    <span flex></span>
+                    <div class="createEmployeeForm" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="30px">
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput mat-maxlength="35" placeholder="Bank Name" type="text" name="bankName" formControlName="bankName" pattern="^[a-zA-Z0-9- ]{1,20}$">
+                            <div *ngIf="f.bankName.errors && (f.bankName.dirty || f.bankName.touched)" class="error-meg">
+                                    <div [hidden]="!f.bankName.errors.pattern ">Max.Length is 20 </div>
+                                    <div [hidden]="!f.bankName.errors.required">Bank Name is required.</div>
+                                </div>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput mat-maxlength="35" placeholder="Account Number" type="number" name="accountNumber" formControlName="accountNumber" 
+                            pattern="^[a-zA-Z0-9-]{10,20}$" maxlength="25">
+                            <div *ngIf="f.accountNumber.errors && (f.accountNumber.dirty || f.accountNumber.touched)" class="error-meg">
+                                    <div [hidden]="!f.accountNumber.errors.required">Account is required.</div>
+                                    <div [hidden]="!f.accountNumber.errors.pattern">Length should be 10-20</div>
+                                </div>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput mat-maxlength="35" placeholder="Branch" type="text" name="branch" formControlName="branch" pattern="^[a-zA-Z0-9- ]{1,30}$" maxlength="35">
+                            <div *ngIf="f.branch.errors && (f.branch.dirty || f.branch.touched)" class="error-meg">
+                                    <div [hidden]="!f.branch.errors.required">Branch Name is required.</div>
+                                    <div [hidden]="!f.branch.errors.pattern">Max.Length is 30</div>
+                                </div>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput mat-maxlength="35" placeholder="IFSC code" type="text" name="ifsccode" 
+                            formControlName="ifsccode" pattern="^[a-zA-Z0-9-]{10,12}$" maxlength="12">
+                                <div *ngIf="f.ifsccode.errors && (f.ifsccode.dirty || f.ifsccode.touched)" class="error-meg">
+                                        <div [hidden]="!f.ifsccode.errors.required">IFSC code is required.</div>
+                                        <div [hidden]="!f.ifsccode.errors.pattern">Length should be 10-12</div>
+                                    </div>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput mat-maxlength="35" placeholder="PAN" type="text" name="panNumber" 
+                            pattern="^[a-zA-Z0-9-]{10}$" maxlength="10" formControlName="panNumber">
+                                <div *ngIf="f.panNumber.errors && (f.panNumber.dirty || f.panNumber.touched)" class="error-meg">
+                                        <!-- <div [hidden]="!f.ifsccode.errors.required">PAN is required</div> -->
+                                        <div [hidden]="!f.panNumber.errors.pattern">PAN must be 10 digits </div>
+                                    </div>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput mat-maxlength="35" placeholder="AADHAR" type="number" name="aadharNumber" pattern="^[a-zA-Z0-9-]{12}$" formControlName="aadharNumber">
+                            <!-- <div *ngIf="aadharNumber.errors && (aadharNumber.dirty || aadharNumber.touched )" class="error-meg">
+                                    <div [hidden]="!aadharNumber.errors.pattern">Aadhar must be 12 digits </div>
+                                    <div [hidden]="!aadharNumber.errors.required">Aadhar Number is required</div>
+                                </div> -->
+                                <div *ngIf="f.aadharNumber.errors && (f.aadharNumber.dirty || f.aadharNumber.touched)" class="error-meg">
+                                        <div [hidden]="!f.aadharNumber.errors.pattern">Aadhar must be 12 digits </div>
+                                        <div [hidden]="!f.aadharNumber.errors.required">Aadhar Number is required</div>
+                                    </div>
+                        </mat-form-field>
+                    </div>
+                    <h5>PF Info</h5>
+                    <span flex></span>
+                    <div class="createEmployeeForm" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="30px">
+                        <mat-form-field class="mat-icon-float mat-block">
+                            <input matInput mat-maxlength="35" placeholder="UAN" type="text" name="uanNumber" formControlName="uanNumber"
+                            pattern="^[a-zA-Z0-9-]{12}$" maxlength="12">
+                            <!-- <div *ngIf="uanNumber.errors && (uanNumber.dirty || uanNumber.touched)" class="error-meg">
+                                    <div [hidden]="!uanNumber.touched">UAN Number is required</div>
+                                </div> -->
+                                <div *ngIf="f.uanNumber.errors && (f.uanNumber.dirty || f.uanNumber.touched)" class="error-meg">
+                                        <div [hidden]="!f.uanNumber.errors.required">UAN Number is required.</div>
+                                        <div [hidden]="!f.uanNumber.errors.pattern">UAN must be 12 digits</div>
+                                    </div>
+                        </mat-form-field>
+                    </div>
+
+
+                </div>
+                <div fxLayoutAlign="end none" fxLayoutGap="15px">
+                        <button md-button (click)="cancelEmployee()" *ngIf="!editEmployee" class="mat-raised-button mat-warn"><i class="fal fa-times-circle"></i> Cancel</button>
+                        <button md-button (click)="cancelEmployee()" *ngIf="editEmployee" class="mat-raised-button mat-warn"><i class="fal fa-times-circle"></i> Cancel</button>
+                        <button type="submit" md-button (click)="createEmployee()" *ngIf="!editEmployee" [disabled]="!CreateEmployeeForm.valid" class="mat-raised-button mat-primary"><i class="far fa-save"></i> Save</button>
+                        <button type="submit" md-button (click)="createEmployee()" *ngIf="editEmployee" [disabled]="!CreateEmployeeForm.valid" class="mat-raised-button mat-primary"><i class="fas fa-redo"></i> Update</button>
+        
+                </div>
+            </form>
+         
+        </div>
+    </div>
+</div>

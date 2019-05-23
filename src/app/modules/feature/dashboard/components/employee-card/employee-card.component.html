@@ -1,0 +1,22 @@
+<mat-card class="flex">
+    <mat-card-content class="float-left mat-card-info">
+        <div class="mat-card-img">
+            <img [src]=img>
+        </div>
+        <div class="mat-card-infor">
+            <span class="ellipsis card-emp-name">{{employee.firstName}} {{employee.middleName}} {{employee.lastName}}</span>
+            <span class="ellipsis"><a href="mailto:{{employee.email}}">{{employee.email}}</a></span>
+            <span class="ellipsis">{{employee.mobileNumber}}</span>
+            <span class="ellipsis"><b>Role:</b> {{employee.employeeRole}}</span>
+            <span class="ellipsis"><b>Emp. ID:</b> {{employee.employeeId}}</span>
+        </div>
+    </mat-card-content>
+    <mat-card-title class="float-right">
+        <mat-icon [matMenuTriggerFor]="menu" class="float-right">more_vert</mat-icon>
+        <mat-menu #menu="matMenu" class="cards-menu" fxLayout="row" fxWrap>
+            <button (click)="emitEmployeeView(employee.employeeId)" mat-menu-item><i class="far fa-file-alt"></i> View</button>
+            <button mat-menu-item (click)="employeeEdit(employee.employeeId)"><i class="far fa-edit"></i> Edit</button>
+        </mat-menu>
+    </mat-card-title>
+</mat-card>
+

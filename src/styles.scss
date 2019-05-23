@@ -1,0 +1,374 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500');
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('./assets/css/all.scss');
+@import url('./assets/css/_variables.scss');
+@import url('https://pro.fontawesome.com/releases/v5.5.0/css/all.css');
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif!important;
+}
+
+mat-toolbar,
+mat-card-content,
+.mat-button,
+.mat-fab,
+.mat-flat-button,
+.mat-icon-button,
+.mat-mini-fab,
+.mat-raised-button,
+.mat-stroked-button,
+.mat-table,
+.mat-option,
+.mat-select,
+.mat-tab-group,
+.mat-form-field,
+.mat-menu-item,
+.mat-tab-label,
+.mat-tab-link,
+#personalDetailsDiv b {
+    font-family: 'Quicksand', sans-serif!important;
+}
+
+html,
+body {
+    overflow: hidden !important;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.mat-toolbar.mat-primary {
+    background: #f5f5f5;
+    color: #000;
+    box-shadow: 0px 2px 5px #000000;
+    z-index: 9;
+    position: relative;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.main-body {
+    color: rgba(0, 0, 0, 0.87);
+    // background: #f5f5f5;
+    // height: 100%;
+    // background: red;
+}
+
+// .body-container {
+//     padding: 20px 40px;
+// }
+.body-container {
+    padding: 20px;
+    // height: calc(100%);
+}
+
+.mat-drawer {
+    background-color: #2d323e;
+}
+
+mat-sidenav-container {
+    height: 100%;
+}
+
+.page-title-info {
+    // margin-bottom: 10px;
+    background-color: #039be5;
+    color: #fff;
+    .h2 {
+        margin: 0!important;
+        padding: 0;
+        line-height: inherit;
+    }
+}
+
+.p-24 {
+    padding: 24px!important;
+}
+
+.float-right {
+    margin-left: auto;
+}
+
+.float-left {
+    margin-right: auto;
+}
+
+.flex {
+    display: flex!important;
+}
+
+.mt-16 {
+    margin-top: 16px!important;
+}
+
+.h2,
+h2 {
+    font-size: 20px;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+.header-button {
+    color: rgba(0, 0, 0, .87);
+    background-color: #fff;
+}
+
+.flex-container {
+    display: flex;
+    .card-container {
+        flex-direction: row;
+        .fuse-card {
+            width: 33%;
+        }
+    }
+}
+
+.flex-wrap {
+    -ms-flex-wrap: wrap!important;
+    flex-wrap: wrap!important;
+}
+
+.flex-container {
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.flex-item {
+    margin-right: 0px;
+    // flex: 1 1 25%;
+    box-sizing: border-box;
+    flex: 1 1 calc(25% - 15px);
+    max-width: calc(25% - 15px);
+    // border: 1px solid rgba(0, 0, 0, 0.12);
+    margin: 7.5px;
+    transition: all .3s ease!important;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .05)!important;
+    transform: translateZ(0);
+    @media only screen and (max-width: 1366px) {
+        flex: 1 1 calc(33% - 15px);
+        max-width: calc(33% - 15px);
+    }
+    @media only screen and (max-width: 768px) {
+        flex: 1 1 calc(50% - 15px);
+        max-width: calc(50% - 15px);
+    }
+    @media only screen and (max-width: 412px) {
+        flex: 1 1 calc(100% - 15px);
+        max-width: calc(100% - 15px);
+    }
+    .mat-icon {
+        width: 16px!important;
+    }
+    &:hover {
+        transition: all .3s ease!important;
+        box-shadow: 0 9px 12px 1px rgba(50, 50, 50, .2)!important;
+        transform: translate(0, -4px);
+        z-index: 9;
+    }
+}
+
+.container-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+    // min-height: calc(100vh - 237px);
+    // height: 100%;
+}
+
+.container-box-2 {
+    background-color: #fff;
+    padding: 40px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+    // height: 100%;
+}
+
+.all-bg-ctrl {
+    .mat-tab-body-wrapper {
+        padding: 30px 30px 0 30px;
+    }
+}
+
+button {
+    i {
+        margin-right: 5px;
+    }
+}
+
+.form-section {
+    .createEmployeeForm {
+        width: 100%;
+        margin-bottom: 40px;
+        right: 60px;
+        .mat-form-field {
+            margin-bottom: 15px;
+        }
+    }
+    h5 {
+        color: #039be5;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+    label {
+        font-weight: 500;
+        color: #2d2d2d;
+    }
+}
+
+.mat-header-cell {
+    font-weight: 700;
+    font-size: 16px;
+    color: #333;
+}
+
+.header-search {
+    .mat-form-field-label {
+        color: rgba(255, 255, 255, 0.7)!important;
+    }
+    .mat-form-field-underline {
+        background-color: rgba(255, 255, 255, 0.7)!important;
+    }
+    .mat-form-field-ripple {
+        background-color: rgba(255, 255, 255, 0.7)!important;
+    }
+    .mat-form-field-underline {
+        bottom: 0.25em;
+    }
+    .mat-form-field-wrapper {
+        padding-bottom: 0;
+    }
+}
+
+.mat-expansion-panel {
+    background: transparent!important;
+    font-family: 'Quicksand', sans-serif!important;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+    box-shadow: none;
+    font-family: 'Quicksand', sans-serif!important;
+}
+
+.mat-expansion-panel-spacing {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif!important;
+}
+
+.mat-list-base .mat-list-item {
+    color: #fff;
+    font-family: 'Quicksand', sans-serif!important;
+}
+
+.mat-expansion-panel-header-title {
+    color: #fff;
+    font-family: 'Quicksand', sans-serif!important;
+}
+
+.mat-expansion-indicator::after,
+.mat-expansion-panel-header-description {
+    color: #fff;
+    font-family: 'Quicksand', sans-serif!important;
+}
+
+.mat-form-field--inline .mat-form-field {
+    display: inline-block;
+    vertical-align: middle;
+    width: 162px;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.error-meg {
+    color: #a94442;
+    font-size: 12px;
+    margin-top: -10px;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    padding: 5px;
+    border-radius: 2px;
+    display: inherit;
+    position: absolute;
+    bottom: -23px;
+    width: 100%;
+    @media (max-width: 1400px) {
+        font-size: 11px;
+    }
+}
+
+.input-group {
+    width: 100%;
+    min-height: 90px;
+    .mat-form-field {
+        width: 100%;
+    }
+    .form-control {
+        width: calc(100% - 165px);
+        float: left;
+    }
+    .input-group-btn {
+        float: left;
+    }
+}
+
+.black-overlay {
+    height: 100vh!important;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: primary-color;
+}
+
+// .mat-tab-group.mat-primary .mat-ink-bar .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+//     background-color: variablecss($primary-color)
+// }
+.mat-tab-label-active {
+    color: primary-color;
+    opacity: 1!important;
+}
+
+.mat-card-infor {
+    .card-emp-name {
+        color: #039be5;
+        font-weight: 500;
+        font-size: 17px;
+    }
+    a {
+        color: #000;
+    }
+}

@@ -1,0 +1,11 @@
+<div class="header accent p-24 h-160 page-title-info p-24 flex">
+    <div class="float-left h2 mt-16 mar-0" *ngIf="employeeName">{{employeeName.prefix}} {{employeeName.firstName}} {{employeeName.lastName}}</div>
+    <div class="float-left h2 mt-16 mar-0" *ngIf="!employeeName && !editEmployee">Create Employee</div>
+    <div class="float-left h2 mt-16 mar-0" *ngIf="editEmployee">Update Employee</div>
+    <div class="float-right">
+        <button button="submit" class="header-button" mat-raised-button routerLink="/employee">
+            <i class="far fa-long-arrow-left"></i>
+            Back
+        </button>
+    </div>
+</div>
